@@ -53,10 +53,10 @@ for message in st.session_state.messages:
 
 # Chat input
 if prompt := st.chat_input("Ask a question about the document"):
-    if st.session_state.question_count >= 5:
+    if st.session_state.question_count >= 15:
         with st.chat_message("assistant"):
             st.error(
-                "You've reached the limit of 5 questions. Please refresh the page to start a new session."
+                "You've reached the limit of 15 questions. Please refresh the page to start a new session."
             )
     else:
         st.session_state.messages.append({"role": "user", "content": prompt})
